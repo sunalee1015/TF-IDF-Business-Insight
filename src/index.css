@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nanum Gothic", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white font-sans antialiased overflow-hidden;
+    letter-spacing: -0.05em; /* 자간 0.8 수준 (약 -0.05em ~ -0.08em) */
+  }
+}
+
+.aurora-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 20% 30%, rgba(76, 0, 255, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.1) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl;
+}
+
+.glass-button {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full font-semibold hover:bg-white/20 transition-all active:scale-95;
+}
+
+.slide-content {
+  @apply w-full h-full flex flex-col p-10 overflow-hidden relative;
+}
+
+.title-gradient {
+  @apply bg-gradient-to-br from-white via-white/80 to-white/40 bg-clip-text text-transparent;
+}
+
+.korean-tight {
+  letter-spacing: -0.08em; /* 요청하신 자간 0.8 수준 강조 */
+}
